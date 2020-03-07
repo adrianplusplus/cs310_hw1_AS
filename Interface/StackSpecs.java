@@ -10,6 +10,4 @@ public interface StackSpecs<E> {
 	public E pop();
 
 	public E peek();
-
-	public void toString(E obj);
 }
