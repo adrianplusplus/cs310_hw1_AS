@@ -34,9 +34,10 @@ public class LLStack<E> implements StackSpecs<E> {
 			pushNode.setNextNode(this.top);
 
 			// update top reference
-			this.top = pushNode;
+
 		}
 
+		this.top = pushNode;
 		stackSize++;
 	}
 
@@ -53,6 +54,7 @@ public class LLStack<E> implements StackSpecs<E> {
 		// update the top pointer to point to the next node
 		this.top = this.top.getNextNode();
 
+		this.stackSize--;
 		return popNode.getData();
 	}
 
@@ -71,6 +73,8 @@ public class LLStack<E> implements StackSpecs<E> {
 	public String toString() {
 		Node<E> current = this.top;
 		String str = "";
+		if (this.isEmpty())
+			return str;
 		while (current != null) {
 			str += String.format(current.getData().toString()) + '\n';
 			current = current.getNextNode();
