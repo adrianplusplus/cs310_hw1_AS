@@ -2,12 +2,19 @@ package Driver;
 
 import java.util.Scanner;
 
-import Container.Node;
 import Container.StackQ;
+import Data.DataClass;
+import Interface.QueueSpecs;
 
 public class Driver {
+
     public static void main(String[] args) {
+
         char inputChar;
+        int queueSize = 0;
+        int id = 0;
+
+        QueueSpecs<DataClass> stackQ = new StackQ<DataClass>();
 
         do {
 
@@ -39,39 +46,54 @@ public class Driver {
             if (Character.toString(inputChar).matches("^[a-gA-G]*$")) {
                 System.out.println("\nvalid input.\n");
             } else {
-                System.out.println("\nMenu options must be a letter between a-g. Your selection was outside of that "
-                        + "range. Please make a valid selection.\n");
+                System.out.println("\nMenu options must be a letter between a-g. Your"
+                        + "selection was outside of that " + "range. Please make a valid selection.\n");
             }
 
             switch (inputChar) {
                 case 'a': // Enqueue in the queue
                 {
-                    System.out.println("a");
+                    System.out.println("enter string to enqueue");
+
+                    String input = userInput.next();
+                    stackQ.enQ(new DataClass(input, ++id));
+
+                    System.out.println("element " + input + " enqueued\n");
+                    ++queueSize;
                     break;
                 }
                 case 'b': // Dequeue from the queue
                 {
-                    System.out.println("b");
+                    DataClass dequeuedItem = stackQ.deQ();
+
+                    System.out.println("element dequeued. dataItem = " + dequeuedItem.getDataID() + " , dataName= "
+                            + dequeuedItem.getDataName());
+                    queueSize--;
                     break;
                 }
                 case 'c': // Peek from the Queue
                 {
-                    System.out.println("c");
+                    DataClass peekedItem = stackQ.peek();
+
+                    System.out.println("element peeked. dataItem = " + peekedItem.getDataID() + " , dataName= "
+                            + peekedItem.getDataName());
+
                     break;
                 }
                 case 'd': // Display the queue
                 {
-                    System.out.println("d");
+                    System.out.println("Content of the queue is");
                     break;
                 }
                 case 'e': // Display enQStack and deQStack
                 {
-                    System.out.println("e");
+                    System.out.println("enQStack and deQStack are");
+                    System.out.println(stackQ.toString());
                     break;
                 }
                 case 'f': // Display size of the queue
                 {
-                    System.out.println("f");
+                    System.out.println("Size of the queue is:" + queueSize);
                     break;
                 }
                 case 'g': // Exit loop and program
@@ -81,5 +103,7 @@ public class Driver {
                 }
             }
         } while (inputChar != 'g');
+
     }
+
 }
