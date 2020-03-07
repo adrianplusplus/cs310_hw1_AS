@@ -27,4 +27,9 @@ public class DataClass {
 		this.dataID = dataID;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("ID = " + this.dataID + " , Name = " + this.dataName);
+	}
+
 }
