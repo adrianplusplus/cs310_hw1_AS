@@ -18,9 +18,8 @@ public class LLStack<E> implements StackSpecs<E> {
 
 	@Override
 	public void emptyStack() {
-		while (!isEmpty()) {
-			((StackSpecs<E>) top).pop();
-		}
+		this.top = null;
+		this.stackSize = 0;
 	}
 
 	@Override
