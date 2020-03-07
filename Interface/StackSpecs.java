@@ -10,4 +10,6 @@ public interface StackSpecs<E> {
 	public E pop();
 
 	public E peek();
+
+	public int size();
 }

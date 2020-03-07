@@ -11,7 +11,6 @@ public class Driver {
     public static void main(String[] args) {
 
         char inputChar;
-        int queueSize = 0;
         int id = 0;
 
         QueueSpecs<DataClass> stackQ = new StackQ<DataClass>();
@@ -59,7 +58,6 @@ public class Driver {
                     stackQ.enQ(new DataClass(input, ++id));
 
                     System.out.println("element " + input + " enqueued\n");
-                    ++queueSize;
                     break;
                 }
                 case 'b': // Dequeue from the queue
@@ -68,7 +66,6 @@ public class Driver {
 
                     System.out.println("element dequeued. dataItem = " + dequeuedItem.getDataID() + " , dataName= "
                             + dequeuedItem.getDataName());
-                    queueSize--;
                     break;
                 }
                 case 'c': // Peek from the Queue
@@ -93,7 +90,7 @@ public class Driver {
                 }
                 case 'f': // Display size of the queue
                 {
-                    System.out.println("Size of the queue is:" + queueSize);
+                    System.out.println("Size of the queue is:" + stackQ.size());
                     break;
                 }
                 case 'g': // Exit loop and program

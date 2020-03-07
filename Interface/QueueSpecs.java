@@ -10,4 +10,6 @@ public interface QueueSpecs<E> {
 	public E deQ();
 
 	public E peek();
+
+	public int size();
 }

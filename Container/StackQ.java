@@ -60,4 +60,9 @@ public class StackQ<E> implements QueueSpecs<E> {
 		return str;
 	}
 
+	@Override
+	public int size() {
+		return this.deQStack.size() + this.enQStack.size();
+	}
+
 }

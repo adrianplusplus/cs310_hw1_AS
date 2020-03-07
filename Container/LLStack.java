@@ -82,4 +82,9 @@ public class LLStack<E> implements StackSpecs<E> {
 		return str;
 	}
 
+	@Override
+	public int size() {
+		return this.stackSize;
+	}
+
 }
