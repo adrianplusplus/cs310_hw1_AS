@@ -14,7 +14,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return this.enQStack.isEmpty() && this.deQStack.isEmpty();
 	}
 
 	@Override
