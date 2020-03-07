@@ -64,22 +64,24 @@ public class Driver {
                 {
                     DataClass dequeuedItem = stackQ.deQ();
 
-                    System.out.println("element dequeued. dataItem = " + dequeuedItem.getDataID() + " , dataName= "
-                            + dequeuedItem.getDataName());
+                    System.out.println("element dequeued: " + dequeuedItem.toString());
                     break;
                 }
                 case 'c': // Peek from the Queue
                 {
                     DataClass peekedItem = stackQ.peek();
 
-                    System.out.println("element peeked. dataItem = " + peekedItem.getDataID() + " , dataName= "
-                            + peekedItem.getDataName());
+                    System.out.println("element peeked: " + peekedItem.toString());
 
                     break;
                 }
                 case 'd': // Display the queue
                 {
                     System.out.println("Content of the queue is");
+                    int sizeCopy = stackQ.size();
+                    for (int i = 0; i < sizeCopy; i++) {
+                        System.out.println(stackQ.deQ());
+                    }
                     break;
                 }
                 case 'e': // Display enQStack and deQStack
