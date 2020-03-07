@@ -19,8 +19,8 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public void emptyQueue() {
-		// TODO Auto-generated method stub
-
+		this.enQStack.emptyStack();
+		this.deQStack.emptyStack();
 	}
 
 	@Override
