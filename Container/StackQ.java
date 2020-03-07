@@ -31,22 +31,33 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public E deQ() {
-		E temp = this.deQStack.pop();
 		// if is empty, pop all elements from enq and push to deq
-		if (temp == null) {
+		if (this.deQStack.isEmpty()) {
 			while (!this.enQStack.isEmpty()) {
 				this.deQStack.push(this.enQStack.pop());
 			}
-			temp = this.deQStack.pop();
 		}
 
-		// return poped
-		return temp;
+		return this.deQStack.pop();
 	}
 
 	@Override
 	public E peek() {
+		if (this.deQStack.isEmpty()) {
+			while (!this.enQStack.isEmpty()) {
+				this.deQStack.push(this.enQStack.pop());
+			}
+		}
 		return this.deQStack.peek();
+	}
+
+	@Override
+	public String toString() {
+		String str = "Content of deQStack below\n" + this.deQStack.toString();
+
+		str += "\nContent of enQStack below\n" + this.enQStack.toString();
+
+		return str;
 	}
 
 }
