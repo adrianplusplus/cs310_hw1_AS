@@ -46,8 +46,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public E peek() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.deQStack.peek();
 	}
 
 }
