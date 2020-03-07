@@ -2,49 +2,40 @@ package Container;
 
 import Interface.QueueSpecs;
 
-public class StackQ<E> implements QueueSpecs<E>
-{
-    
+public class StackQ<E> implements QueueSpecs<E> {
+
 	private LLStack<E> enQStack;
 	private LLStack<E> deQStack;
-	
-	public StackQ()
-	{
-		
-		
+
+	public StackQ() {
+
 	}
-	
-	
+
 	@Override
-	public boolean isEmpty() 
-	{
+	public boolean isEmpty() {
 		return false;
 	}
 
 	@Override
-	public void emptyQueue() 
-	{
+	public void emptyQueue() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void enQ(E obj) 
-	{
+	public void enQ(E obj) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public E deQ() 
-	{
+	public E deQ() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public E peek() 
-	{
+	public E peek() {
 		// TODO Auto-generated method stub
 		return null;
 	}
