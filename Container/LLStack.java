@@ -13,7 +13,7 @@ public class LLStack<E> implements StackSpecs<E> {
 
 	@Override
 	public boolean isEmpty() {
-		return top == null;
+		return stackSize == 0;
 	}
 
 	@Override
@@ -27,11 +27,16 @@ public class LLStack<E> implements StackSpecs<E> {
 		// create new node and allocate memory
 		Node<E> pushNode = new Node<E>(obj);
 
-		// put top reference into link
-		pushNode.setNextNode(this.top);
+		if (this.isEmpty()) {
+			this.top = pushNode;
+		} else {
+			// put top reference into link
+			pushNode.setNextNode(this.top);
 
-		// update top reference
-		this.top = pushNode;
+			// update top reference
+			this.top = pushNode;
+		}
+
 		stackSize++;
 	}
 
@@ -63,12 +68,14 @@ public class LLStack<E> implements StackSpecs<E> {
 	}
 
 	@Override
-	public void toString(E obj) {
-		Node<E> printNode = new Node<E>(obj);
-
-		while (!isEmpty()) {
-			printNode = (Node<E>) pop();
-			System.out.println("This is an experiment " + printNode);
+	public String toString() {
+		Node<E> current = this.top;
+		String str = "";
+		while (current != null) {
+			str += String.format(current.getData().toString()) + '\n';
+			current = current.getNextNode();
 		}
+		return str;
 	}
+
 }
