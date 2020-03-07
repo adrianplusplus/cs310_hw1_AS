@@ -31,8 +31,17 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public E deQ() {
-		// TODO Auto-generated method stub
-		return null;
+		E temp = this.deQStack.pop();
+		// if is empty, pop all elements from enq and push to deq
+		if (temp == null) {
+			while (!this.enQStack.isEmpty()) {
+				this.deQStack.push(this.enQStack.pop());
+			}
+			return this.deQStack.pop();
+		}
+
+		// return poped
+		return temp;
 	}
 
 	@Override
