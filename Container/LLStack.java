@@ -27,9 +27,6 @@ public class LLStack<E> implements StackSpecs<E> {
 		// create new node and allocate memory
 		Node<E> pushNode = new Node<E>(obj);
 
-		// initialize data into data field
-		// newNode.setData(obj); ??????????????????????????
-
 		// put top reference into link
 		pushNode.setNextNode(this.top);
 
