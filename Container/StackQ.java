@@ -25,7 +25,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public void enQ(E obj) {
-		// TODO Auto-generated method stub
+		this.enQStack.push(obj);
 
 	}
 
