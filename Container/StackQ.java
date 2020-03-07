@@ -37,7 +37,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 			while (!this.enQStack.isEmpty()) {
 				this.deQStack.push(this.enQStack.pop());
 			}
-			return this.deQStack.pop();
+			temp = this.deQStack.pop();
 		}
 
 		// return poped
