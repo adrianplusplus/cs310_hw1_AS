@@ -8,7 +8,8 @@ public class StackQ<E> implements QueueSpecs<E> {
 	private LLStack<E> deQStack;
 
 	public StackQ() {
-
+		this.enQStack = new LLStack<E>();
+		this.deQStack = new LLStack<E>();
 	}
 
 	@Override
